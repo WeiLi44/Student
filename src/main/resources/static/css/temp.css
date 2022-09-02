@@ -1,0 +1,133 @@
+/* Horizontal Navigation Bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f0f0f0;
+  position: sticky;
+  }
+
+li {
+  float: left;
+  }
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  font-family: Oswald;
+  padding: 14px 16px;
+  text-decoration: none;
+  }
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+  }
+
+
+/* body */
+h1, h2, h3, h4, h5, h6 {
+  color: #162c24;
+  font-family: Oswald;
+  }
+
+body {
+  font-family: Open Sans;  
+  background-color: #fafafa;
+  padding: 14px 16px;  
+  }  
+
+
+/* Login Page */
+input[type=text], select {
+  text-align: center;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  /* border: 1px solid #ccc8*/;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+input[type=password], select {
+  text-align: center;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  /* border: 1px solid #ccc8*/;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+input[type=submit], input[type=reset] {
+  width: 49.2%;
+  background-color: #cfe7df;
+  color: #306050;
+  padding: 14px 20px;
+  margin: auto;
+  border: 20px;
+  border-radius: 4px; /* curve edge */
+  cursor: pointer;
+  }
+  
+  input[type=hidden] {
+	border-style: none;
+  }
+  
+  select{
+	text-align: center;
+  	width: 100%;
+  	padding: 12px 20px;
+  	margin: 8px 0;
+  	display: inline-block;
+  	border: none;
+  	/* border: 1px solid #ccc8*/;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+	}
+
+.container {   
+        margin:auto;
+        width: 25%;
+        padding: 25px;
+        border: none;   
+        background-color: #f0f0f0;
+        } 
+
+
+/* Table */
+.mytable{
+	font-family: Open Sans;
+	font-size: 14px;
+  	border-collapse: collapse;
+  	}
+
+.mytable th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #d3e5ed ;
+	color: #162c35;
+	}
+	
+.mytable td, .mytable th, .mytable tr {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  }
+
+.mytable.table tr:nth-child(even) {
+	background-color: #f2f2f2;
+  }
+
+.mytable tr:hover{
+	background-color: #ddd;
+}
+
+  

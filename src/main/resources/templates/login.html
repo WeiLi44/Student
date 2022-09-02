@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/temp.css" th:href="@{/css/temp.css}" />
+</head>
+
+<body>
+	<form th:object="${user}" th:action="@{/main/authenticate}">
+
+		<div class="container">
+			
+			
+			<fieldset>
+			<input type="text" th:field="*{username}" placeholder="username">
+			</fieldset>
+
+			<fieldset>
+			<input type="password" th:field="*{password}" placeholder="password">
+			</fieldset>
+
+			<fieldset>
+				<input type="submit" value="Login">
+				<input type="reset" value="Clear">
+			</fieldset>
+		
+		</div>
+</body>
+
+</html>

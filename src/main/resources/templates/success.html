@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/temp.css" th:href="@{/css/temp.css}" />
+</head>
+
+<body>
+	<h3 th:text="'Welcome back, ' + ${session.uss.username}"> Hello </h3>
+	
+	<ul>
+		<li> <a th:href=" @{/student/all}" th:utext="#{home.view}">Home</a> </li>
+		<li> <a th:href="@{/student/all}" th:utext="#{student.access}">Student</a> </li>
+	</ul>
+
+	<br/>
+	<p>The transfer is successful!</p>
+	
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/temp.css" th:href="@{/css/temp.css}" />
+</head>
+
+<body>
+	<body>
+	<span th:unless="${#strings.isEmpty(uss)}">
+		<h3 th:text="'Welcome back, ' + ${session.uss.username}"> Hello </h3>
+	</span>
+	
+	<ul>
+		<li> <a th:href=" @{/student/all}" th:utext="#{home.view}">Home</a> </li>
+		<li> <a th:href="@{/student/all}" th:utext="#{student.access}">Student</a> </li>
+	</ul>
+	<br />
+	
+	<div class="container">
+	<form th:object="${student}" th:action="@{/student/addstudent}" method="POST">
+		<fieldset>
+		<input type="hidden" th:field="*{studentId}">
+		</fieldset>
+		
+		<fieldset>
+		<input type="text" th:field="*{name}" placeholder="Name" />
+		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+		</fieldset>
+
+		<fieldset>
+		<input type="text" th:field="*{title}" placeholder="Title"/>
+		</fieldset>
+		
+		<fieldset>
+		<input type="text" th:field="*{pocketmoney}" placeholder="Pocket Money"/>
+		</fieldset>
+		
+		<fieldset>
+			<select name="track">
+				<option th:each="trackOpt: ${T(sg.edu.iss.club.student.model.Track).values()}" th:value="${trackOpt}" 
+				th:text="${trackOpt.displayValue}"></option>
+			</select>
+		</fieldset>
+		
+		<fieldset>
+		<input type="text" th:field="*{enrolled}" placeholder="dd/MM/yyyy"/>
+		</fieldset>
+		
+		<fieldset>
+		<input type="submit" value="Save">
+		<input type="reset" value="Clear">
+		</fieldset>
+	</form>
+	</div>
+
+</body>
+
+</html>

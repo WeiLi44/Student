@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<title>Listing Page</title>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/temp.css" th:href="@{/css/temp.css}" />
+	<h3 th:text="'Welcome back, ' + ${session.uss.username}"> Hello </h3>
+
+</head>
+
+<body>
+	
+	<ul>
+		<li> <a th:href=" @{/student/all}" th:utext="#{home.view}">Home</a> </li>
+		<li> <a th:href="@{/student/all}" th:utext="#{student.access}">Student</a> </li>
+		<li> <a th:href="@{/student/load}" th:utext="#{student.add}">Add</a> </li>
+	</ul>
+	
+	<br />
+	<div class="mytable">
+	<table th:if="${not #lists.isEmpty(students)}">
+
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Title</th>
+			<th>Pocket</th>
+			<th>Track</th>
+			<th>Date Enrolled</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+
+		<tr th:each="s:${students}">
+			<td th:text="${s.studentId}">Id</td>
+			<td th:text="${s.name}">Name</td>
+			<td th:text="${s.title}">Title</td>
+			<td th:text="${s.pocketmoney}">Pocket</td>
+			<td th:text="${s.track}">Track</td>
+			<td th:text="${s.enrolled}">Date Enrolled</td>
+			<td><a href="form.html" th:href="@{/student/editload/}+${s.studentId}" th:utext="#{student.edit}">Edit</a></td>
+			<td><a href="form.html" th:href="@{/student/deletestudent/}+${s.studentId}" th:utext="#{student.delete}">Delete</a></td>
+		</tr>
+	</table>
+	</div>
+
+</body>
+
+</html>
